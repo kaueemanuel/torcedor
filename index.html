@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/styles/style.css">
+  <title>Torcedor</title>
+</head>
+
+<body>
+  <header>TORCEDOR</header>
+  <div class="container">
+    <div class="item">
+      <div class="item-nome">Ano de nascimento</div>
+      <div class="item-conteudo">
+        <input type="number" id="anoNasci" min="0" value="1970">
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-nome">Sexo</div>
+      <div class="item-conteudo">
+        <input type="radio" checked name="sexo"> Masculino
+        <input type="radio" name="sexo"> Feminino
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-nome">Time</div>
+      <div class="item-conteudo">
+        <input type="radio" checked name="time"> Internacional
+        <input type="radio" name="time"> Grêmio
+      </div>
+    </div>
+    <div class="caixa-botao">
+      <button id="botao">Verificar</button>
+    </div>
+  </div>
+
+  <div class="container inv">
+    <div class="caixa-img">
+      <img src="src/images/teste.png">
+    </div>
+  </div>
+</body>
+
+</html>
