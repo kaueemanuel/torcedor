@@ -15,33 +15,36 @@
     <div class="item">
       <div class="item-nome">Ano de nascimento</div>
       <div class="item-conteudo">
-        <input type="number" id="anoNasci" min="0" value="1970">
+        <input type="number" id="txtano" min="0" value="1970">
       </div>
     </div>
     <div class="item">
       <div class="item-nome">Sexo</div>
       <div class="item-conteudo">
-        <input type="radio" checked name="sexo"> Masculino
-        <input type="radio" name="sexo"> Feminino
+        <input type="radio" checked name="radsex" value="masculino"> Masculino
+        <input type="radio" name="radsex" value="feminino"> Feminino
       </div>
     </div>
     <div class="item">
       <div class="item-nome">Time</div>
       <div class="item-conteudo">
-        <input type="radio" checked name="time"> Internacional
-        <input type="radio" name="time"> Grêmio
+        <input type="radio" checked name="radtime" value="colorado"> Internacional
+        <input type="radio" name="radtime" value="gremista"> Grêmio
       </div>
     </div>
     <div class="caixa-botao">
-      <button id="botao">Verificar</button>
+      <button id="botao" onclick="verificar()">Verificar</button>
     </div>
   </div>
 
-  <div class="container inv">
+  <div id="resultado-container" class="container">
+    <div id="resultado-texto" class="item-nome">Time</div>
     <div class="caixa-img">
-      <img src="src/images/teste.png">
+      <img id="img" src="">
     </div>
   </div>
+
+  <script src="src/scripts/script.js"></script>
 </body>
 
 </html>

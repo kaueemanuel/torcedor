@@ -26,8 +26,13 @@ header {
   border-radius: 10px;
   padding: 22px;
   margin: 10px;
-  min-width: 255px;
+  min-width: 265px;
   text-align: center;
+  transition: ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .item {
@@ -45,8 +50,11 @@ header {
   color: #161a1b;
 }
 
-input[name="sexo"]:last-child, input[name="time"]:last-child {
-  margin-left:20px;
+.item-conteudo {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 input[type="number"] {
@@ -75,3 +83,18 @@ input[type="number"] {
   opacity: 0.9;
 }
 
+.caixa-img {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#img {
+  width: 100%;
+  height: auto;
+}
+
+#resultado-container {
+  opacity: 0;
+}
