@@ -9,12 +9,28 @@ function verificaTimeEFaixaEtaria(idade) {
 
   const caminhoImagem = 'src/images/'
 
+  // verifica se o sexo é masculino
   if (fsex === 'masculino') {
+    /* isso aqui é um if simplificado seria a mesma coisa que fazer isso: 
+      if(ftime === 'colorado') {
+        time = 'colorado'
+      } else {
+        time = 'gremista'
+      }
+    */
     time = ftime === 'colorado' ? 'colorado' : 'gremista'
     if (idade >= 0 && idade < 10) {
       //criança
+      /* 
+        nessas duas linha do resultado eu estou montando o texto que desejo mostrar no resultado e coloco na posição 0 do resultado
+        e tambem coloco na posição 1 o caminho da imagem que eu quero mostrar.
+        o resultado vai ficar assim:
+        ["Menino colorado de 10 anos", "src/images/colorado/menino.png"]
+      */
       resultado[0] = 'Menino ' + time + ' de ' + idade + ' anos'
       resultado[1] = caminhoImagem + time + '/' + 'menino.png'
+
+      // isso é o retorno da função quando uso esse return todo o codigo que vem depois é ignorado.
       return resultado
     } else if (idade < 21) {
       //jovem
@@ -31,6 +47,7 @@ function verificaTimeEFaixaEtaria(idade) {
       return resultado
     }
   }
+
   if (fsex === 'feminino') {
     timeCaminho = ftime === 'colorado' ? 'colorado' : 'gremista'
     time = ftime === 'colorado' ? 'colorada' : 'gremista'
@@ -56,7 +73,6 @@ function verificaTimeEFaixaEtaria(idade) {
   }
 }
 
-
 function verificar() {
   // pega o ano selecionado
   const fano = document.getElementById('txtano')
@@ -74,7 +90,11 @@ function verificar() {
   // pega a idade fazendo o ano atual - o ano de nascimento
   const idade = ano - Number(fano.value)
 
-  // função que verifica e retorna o time e a faixa etaria da pessoa
+  /*
+    Aqui eu estou fazendo o uso da função que foi criada logo acima, nela ira retornar os resultados
+    Ex.: ["Menino colorado de 10 anos", "src/images/colorado/menino.png"]
+    dessa forma que escrevi eu estou pegando o que vem na posição 0 e jogando na variavel texto, o mesmo para a posição 1 que vai na variavel srcDaImagem
+  */
   const [texto, srcDaImagem] = verificaTimeEFaixaEtaria(idade)
 
   // pega a div onde será mostrado o resultado
@@ -95,7 +115,7 @@ function verificar() {
   // joga o texto na div
   resultadoTexto.innerHTML = texto
 
-  // deixa visivel a div do resultado
+  // eu setei no css que a opacidade da div que mostra o resultado é 0 isso faz com que ela n apareça na tela, portante é preciso seta para 1 para que ela mostre
   resultadoContainer.style.opacity = 1
 
 }
