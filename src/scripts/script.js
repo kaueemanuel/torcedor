@@ -1,3 +1,12 @@
+/* 
+  função que monta o texto 
+  Ex.: Menino colorado de 10 anos
+*/
+function montaTexto(FaixaEtaria, time, idade) {
+  const anos = idade <= 1 ? 'ano' : 'anos'
+  return FaixaEtaria + ' ' + time + ' de ' + idade + ' ' + anos
+}
+
 function verificaTimeEFaixaEtaria(idade) {
   // inicializa as variáveis
   const resultado = ['', '']
@@ -27,22 +36,21 @@ function verificaTimeEFaixaEtaria(idade) {
         o resultado vai ficar assim:
         ["Menino colorado de 10 anos", "src/images/colorado/menino.png"]
       */
-      resultado[0] = 'Menino ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Menino', time, idade)
       resultado[1] = caminhoImagem + time + '/' + 'menino.png'
-
       // isso é o retorno da função quando uso esse return todo o codigo que vem depois é ignorado.
       return resultado
     } else if (idade < 21) {
       //jovem
-      resultado[0] = 'Jovem ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Jovem', time, idade)
       resultado[1] = caminhoImagem + time + '/' + 'jovem.png'
       return resultado
     } else if (idade < 50) {
-      resultado[0] = 'Adulto ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Adulto', time, idade)
       resultado[1] = caminhoImagem + time + '/' + 'adulto.png'
       return resultado
     } else {
-      resultado[0] = 'Idoso ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Idoso', time, idade)
       resultado[1] = caminhoImagem + time + '/' + 'idoso.png'
       return resultado
     }
@@ -53,20 +61,20 @@ function verificaTimeEFaixaEtaria(idade) {
     time = ftime === 'colorado' ? 'colorada' : 'gremista'
     if (idade >= 0 && idade < 10) {
       //criança
-      resultado[0] = 'Menina ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Menina', time, idade)
       resultado[1] = caminhoImagem + timeCaminho + '/' + 'menina.png'
       return resultado
     } else if (idade < 21) {
       //jovem
-      resultado[0] = 'Jovem ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Jovem', time, idade)
       resultado[1] = caminhoImagem + timeCaminho + '/' + 'jovemm.png'
       return resultado
     } else if (idade < 50) {
-      resultado[0] = 'Adulta ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Adulta', time, idade)
       resultado[1] = caminhoImagem + timeCaminho + '/' + 'adulta.png'
       return resultado
     } else {
-      resultado[0] = 'Idosa ' + time + ' de ' + idade + ' anos'
+      resultado[0] = montaTexto('Idosa', time, idade)
       resultado[1] = caminhoImagem + timeCaminho + '/' + 'idosa.png'
       return resultado
     }
